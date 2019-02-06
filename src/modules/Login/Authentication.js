@@ -11,8 +11,6 @@ import {
 
 import Logo from '../../components/Logo';
 
-import {Actions} from 'react-native-router-flux';
-
 const FBSDK = require('react-native-fbsdk');
 const {LoginButton, ShareDialog} = FBSDK;
 
@@ -20,6 +18,7 @@ const {LoginButton, ShareDialog} = FBSDK;
 
 
 export default class Authentication extends Component {
+
   constructor(props) {
     super(props);
     const shareLinkContent = {
@@ -31,7 +30,7 @@ export default class Authentication extends Component {
       shareLinkContent,
     };
   }
-
+  
   async shareLinkWithShareDialog() {
     const canShow = await ShareDialog.canShow(this.state.shareLinkContent);
     if (canShow) {
@@ -49,18 +48,17 @@ export default class Authentication extends Component {
       }
     }
   }
-	signup() {
-		Actions.signup()
-    }
-    signUpPhone() {
-		Actions.signUpPhone()
-	}
 
 	render() {
-		return(
+    const { navigation } = this.props;
+		return( 
 			<View style={styles.container}>
 				<Logo/>
-        <TouchableOpacity onPress={this.signUpPhone} style={styles.button}>
+        <TouchableOpacity 
+          onPress={() => {
+            navigation.navigate('SignUpPhone');
+          }}
+          style={styles.button}>
             <Text style={styles.buttonText}>Ingrear con Télefono</Text>
         </TouchableOpacity> 
         <TouchableOpacity style={styles.buttonFaceBook}>
@@ -77,7 +75,7 @@ export default class Authentication extends Component {
         </View>
 				<View style={styles.signupTextCont}>
 					<Text style={styles.signupText}>Don't have an account yet?</Text>
-					<TouchableOpacity onPress={this.signup}><Text style={styles.signupButton}> Signup</Text></TouchableOpacity>
+					<TouchableOpacity ><Text style={styles.signupButton}> Signup</Text></TouchableOpacity>
                 </View>
         
 			</View>	

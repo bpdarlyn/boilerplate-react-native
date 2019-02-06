@@ -1,1 +1,9 @@
-export const fbLoginPermissions = ['email'];
+
+const CONSTANTS = {
+  REGISTRO: 'REGISTRO',
+  LOGIN: 'LOGIN',
+  ESTABLERCER_SESION: 'ESTABLERCER_SESION',
+  CERRAR_SESION: 'CERRAR_SESION'
+};
+
+export default CONSTANTS;

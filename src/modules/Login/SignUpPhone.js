@@ -8,29 +8,23 @@ import {
 } from 'react-native';
 
 import FormPhone from './Forms/FormPhone';
-
-import {Actions} from 'react-native-router-flux';
 import Logo from '../../components/Logo';
 
-export default class SignUpPhone extends Component<{}> {
-
-	authentication() {
-		Actions.authentication()
-	}
+export default class SignUpPhone extends Component {
     
 	render() {
 		return(
 			<View style={styles.container}>
                 <Logo/>
 				<FormPhone type="Continuar"/>
-                <TouchableOpacity onPress={this.authentication} style={styles.button}>
+                <TouchableOpacity style={styles.button}>
                     <Text style={styles.buttonText}>Volver</Text>
                 </TouchableOpacity> 
              <View>   
             </View>
 				<View style={styles.signupTextCont}>
 					<Text style={styles.signupText}>Don't have an account yet?</Text>
-					<TouchableOpacity onPress={this.signup}><Text style={styles.signupButton}> Signup</Text></TouchableOpacity>
+					<TouchableOpacity ><Text style={styles.signupButton}> Signup</Text></TouchableOpacity>
             </View>
 			</View>	
 			)

@@ -1,7 +1,6 @@
-
-
+import * as firebase from 'firebase';
   // Initialize Firebase
-var config = {
+const config = {
     apiKey: "AIzaSyAhsmOfrQyq23HylG-Csb_qgWVlr7HGbrc",
     authDomain: "aty-client.firebaseapp.com",
     databaseURL: "https://aty-client.firebaseio.com",
@@ -10,3 +9,6 @@ var config = {
     messagingSenderId: "34898956141"
 };
 firebase.initializeApp(config);
+
+export const autenticacion = firebase.auth();
+export const baseDeDatos = firebase.database();

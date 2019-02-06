@@ -54,22 +54,26 @@ const styles = StyleSheet.create({
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  View,
-  StatusBar 
+  View
 } from 'react-native';
 
+import { Provider } from 'react-redux';
+import Store from './src/stores/Store';
 
-import Routes from './src/Routes';
+import Seleccion from './src/Seleccion';
 
-export default class App extends Component<{}> {
+export default class App extends Component {
+  constructor() {
+    super();
+    this.state = { nombre: 'TEST' };
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar
-           backgroundColor="#1c313a"
-           barStyle="light-content"
-         />
-        <Routes/>
+        <Provider store={Store}>
+          <Seleccion />
+        </Provider>
       </View>
     );
   }

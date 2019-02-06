@@ -1,58 +1,46 @@
+// import liraries
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  StatusBar ,
-  TouchableOpacity
-} from 'react-native';
+import { View, Text, StyleSheet, Button, TextInput } from 'react-native';
+import { connect } from 'react-redux';
+import SignUpForm from './Forms/SignUpForm';
 
-import Logo from '../../components/Logo';
-import Form from '../../components/Form';
-
-import {Actions} from 'react-native-router-flux';
-
-export default class Signup extends Component<{}> {
-
-  goBack() {
-      Actions.pop();
+// create a component
+class SignUp extends Component {
+  render() {
+    console.log(this.props.numero);
+    const { navigation } = this.props;
+    return (
+      <View style={styles.container}>
+        <SignUpForm />
+        <Button
+          title="SignIn"
+          onPress={() => {
+            navigation.goBack();
+          }}
+        />
+      </View>
+    );
   }
-
-	render() {
-		return(
-			<View style={styles.container}>
-				<Logo/>
-				<Form type="Signup"/>
-				<View style={styles.signupTextCont}>
-					<Text style={styles.signupText}>Already have an account?</Text>
-					<TouchableOpacity onPress={this.goBack}><Text style={styles.signupButton}> Sign in</Text></TouchableOpacity>
-				</View>
-			</View>	
-			)
-	}
 }
 
+// define your styles
 const styles = StyleSheet.create({
-  container : {
-    backgroundColor:'#455a64',
+  container: {
     flex: 1,
-    alignItems:'center',
-    justifyContent :'center'
+    justifyContent: 'center',
+    backgroundColor: '#2c3e50',
+    paddingHorizontal: 16,
   },
-  signupTextCont : {
-  	flexGrow: 1,
-    alignItems:'flex-end',
-    justifyContent :'center',
-    paddingVertical:16,
-    flexDirection:'row'
-  },
-  signupText: {
-  	color:'rgba(255,255,255,0.6)',
-  	fontSize:16
-  },
-  signupButton: {
-  	color:'#ffffff',
-  	fontSize:16,
-  	fontWeight:'500'
-  }
 });
+
+const mapStateToProps = state => ({
+  numero: state.reducerPrueba,
+});
+
+const mapDispatchToProps = dispatch => ({
+  aumentar: () => {
+    dispatch({ type: 'AUMENTAR_REDUCER_PRUEBA' });
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
