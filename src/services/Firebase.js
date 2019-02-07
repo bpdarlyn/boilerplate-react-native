@@ -1,3 +1,4 @@
+/*
 import * as firebase from 'firebase';
   // Initialize Firebase
 const config = {
@@ -9,6 +10,11 @@ const config = {
     messagingSenderId: "34898956141"
 };
 firebase.initializeApp(config);
+
+export const autenticacion = firebase.auth();
+export const baseDeDatos = firebase.database();
+*/
+import firebase from 'react-native-firebase'
 
 export const autenticacion = firebase.auth();
 export const baseDeDatos = firebase.database();

@@ -13,11 +13,16 @@ import Logo from '../../components/Logo';
 export default class SignUpPhone extends Component {
     
 	render() {
+    const { navigation } = this.props;
 		return(
 			<View style={styles.container}>
                 <Logo/>
 				<FormPhone type="Continuar"/>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button}
+                onPress={() => {
+                  navigation.navigate('Authentication');
+                }}
+                >
                     <Text style={styles.buttonText}>Volver</Text>
                 </TouchableOpacity> 
              <View>   

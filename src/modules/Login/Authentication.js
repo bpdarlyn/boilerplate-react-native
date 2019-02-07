@@ -10,6 +10,7 @@ import {
 
 
 import Logo from '../../components/Logo';
+import FacebookLogin from '../../services/FacebookLogin';
 
 const FBSDK = require('react-native-fbsdk');
 const {LoginButton, ShareDialog} = FBSDK;
@@ -51,6 +52,8 @@ export default class Authentication extends Component {
 
 	render() {
     const { navigation } = this.props;
+    console.log(FBSDK);
+    console.log("adan cc");
 		return( 
 			<View style={styles.container}>
 				<Logo/>
@@ -61,10 +64,8 @@ export default class Authentication extends Component {
           style={styles.button}>
             <Text style={styles.buttonText}>Ingrear con Télefono</Text>
         </TouchableOpacity> 
-        <TouchableOpacity style={styles.buttonFaceBook}>
-            <Text style={styles.buttonText}>Ingresar con Facebook</Text>
-        </TouchableOpacity> 
-        <LoginButton />
+        <FacebookLogin />
+
         <TouchableHighlight
           style={styles.share}
           onPress={this.shareLinkWithShareDialog.bind(this)}>
