@@ -18,3 +18,11 @@ import firebase from 'react-native-firebase'
 
 export const autenticacion = firebase.auth();
 export const baseDeDatos = firebase.database();
+
+export const signOutUser = async () => {
+  try {
+      await firebase.auth().signOut();
+  } catch (e) {
+      console.log(e);
+  }
+}   

@@ -7,7 +7,6 @@ import SignUpForm from './Forms/SignUpForm';
 // create a component
 class SignUp extends Component {
   render() {
-    console.log(this.props.numero);
     const { navigation } = this.props;
     return (
       <View style={styles.container}>

@@ -10,6 +10,11 @@ export const actionLogin = datos => ({
   datos,
 });
 
+export const actionLoginPhone = datos => ({
+  type: CONSTANTS.LOGIN_PHONE,
+  datos,
+});
+
 export const actionEstablecerSesion = usuario => ({
   type: CONSTANTS.ESTABLERCER_SESION,
   usuario,

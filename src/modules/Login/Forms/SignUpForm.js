@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import { autenticacion } from '../../../services/Firebase';
 
 const fieldNombre = (props) => {
-  console.log('inputs');
+
   return (
     <View style={styles.texInput}>
       <TextInput
@@ -57,7 +57,7 @@ const validate = (values) => {
 };
 
 const SignUpForm = (props) => {
-  console.log('signupform');
+
   return (
     <View>
       <Field name="nombre" component={fieldNombre} ph="nombre" />
@@ -67,18 +67,16 @@ const SignUpForm = (props) => {
       <Button
         title="Registrar"
         onPress={props.handleSubmit((values) => {
-          console.log(values);
+
           autenticacion
             .createUserWithEmailAndPassword(values.correo, values.password)
             .then((success) => {
-              console.log(success);
+              
             })
             .catch((error) => {
               // Handle Errors here.
               const errorCode = error.code;
               const errorMessage = error.message;
-              console.log(errorCode);
-              console.log(errorMessage);
               // ...
             });
         })}

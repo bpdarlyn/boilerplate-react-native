@@ -40,7 +40,6 @@ const mapDispatchToProps = dispatch => ({
         console.log(usuario.toJSON());
         dispatch(actionEstablecerSesion(usuario));
       } else {
-        console.log('No existe sesión');
         dispatch(actionCerrarSesion());
       }
     });

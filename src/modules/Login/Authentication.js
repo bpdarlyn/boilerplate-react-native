@@ -52,8 +52,6 @@ export default class Authentication extends Component {
 
 	render() {
     const { navigation } = this.props;
-    console.log(FBSDK);
-    console.log("adan cc");
 		return( 
 			<View style={styles.container}>
 				<Logo/>
@@ -64,6 +62,7 @@ export default class Authentication extends Component {
           style={styles.button}>
             <Text style={styles.buttonText}>Ingrear con Télefono</Text>
         </TouchableOpacity> 
+
         <FacebookLogin />
 
         <TouchableHighlight

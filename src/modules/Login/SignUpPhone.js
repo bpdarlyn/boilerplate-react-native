@@ -9,24 +9,53 @@ import {
 
 import FormPhone from './Forms/FormPhone';
 import Logo from '../../components/Logo';
+import { connect } from 'react-redux';
+import { actionLoginPhone } from '../../actions/Actions';
+import autenticacion from '../../services/Firebase';
 
-export default class SignUpPhone extends Component {
-    
+class SignUpPhone extends Component {
+  /*
+  constructor(props) {
+    super(props);
+    this.unsubscribe = null;
+    this.state = {
+      user: null,
+      message: '',
+      codeInput: '',
+      phoneNumber: '+44',
+      confirmResult: null,
+    };
+  }
+  */
+  signInPhone = (values) => {
+    console.log("NUMBER");
+    console.log(values);
+    this.props.loginPhone(values);
+    //const { phoneNumber } = this.state;
+    //this.setState({ message: 'Sending code ...' });
+    //console.log(phoneNumber);
+    //firebase.auth().signInWithPhoneNumber(phoneNumber)
+    //  .then(confirmResult => this.setState({ confirmResult, message: 'Code has been sent!' }))
+    //  .catch(error => this.setState({ message: `Sign In With Phone Number Error: ${error.message}` }));
+  };
+
 	render() {
     const { navigation } = this.props;
 		return(
 			<View style={styles.container}>
-                <Logo/>
-				<FormPhone type="Continuar"/>
-                <TouchableOpacity style={styles.button}
-                onPress={() => {
-                  navigation.navigate('Authentication');
-                }}
-                >
-                    <Text style={styles.buttonText}>Volver</Text>
-                </TouchableOpacity> 
-             <View>   
-            </View>
+        <Logo/>
+        
+				<FormPhone type="RegistroPhone" loginPhone={this.signInPhone}/>
+        
+        <TouchableOpacity style={styles.button}
+          onPress={() => {
+            navigation.goBack();
+          }}
+          >
+          <Text style={styles.buttonText}>Volver</Text>
+        </TouchableOpacity> 
+        <View>   
+        </View>
 				<View style={styles.signupTextCont}>
 					<Text style={styles.signupText}>Don't have an account yet?</Text>
 					<TouchableOpacity ><Text style={styles.signupButton}> Signup</Text></TouchableOpacity>
@@ -73,3 +102,17 @@ const styles = StyleSheet.create({
     textAlign:'center'
   }
 });
+
+
+
+const mapStateToProps = state => ({
+  prop: state.prop,
+});
+
+const mapDispatchToProps = dispatch => ({
+  loginPhone: (datos) => {
+    dispatch(actionLoginPhone(datos));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpPhone);

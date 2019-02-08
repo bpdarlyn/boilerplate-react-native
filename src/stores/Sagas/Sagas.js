@@ -24,15 +24,27 @@ function* sagaRegistro(values) {
     console.log(error);
   }
 }
-
+// LOGIN FACEBOOK
 const loginEnFirebase = ({ correo, password }) =>
   autenticacion.signInWithEmailAndPassword(correo, password).then(success => success.toJSON());
 
 function* sagaLogin(values) {
   try {
-    console.log(values);
     const resultado = yield call(loginEnFirebase, values.datos);
-    console.log(resultado);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// LOGIN PHONE
+const loginEnFirebasePhone = ({ telefono }) =>
+  autenticacion.signInWithPhoneNumber(telefono)
+  .then(confirmResult => this.setState({ confirmResult, message: 'Code has been sent!' }))
+  .catch(error => this.setState({ message: `Sign In With Phone Number Error: ${error.message}` }));
+
+function* sagaLoginPhone(values) {
+  try {
+    const resultado = yield call(loginEnFirebasePhone, values.datos);
   } catch (error) {
     console.log(error);
   }
@@ -41,6 +53,7 @@ function* sagaLogin(values) {
 export default function* funcionPrimaria() {
   yield takeEvery(CONSTANTS.REGISTRO, sagaRegistro);
   yield takeEvery(CONSTANTS.LOGIN, sagaLogin);
+  yield takeEvery(CONSTANTS.LOGIN_PHONE, sagaLoginPhone);
   // yield ES6
   console.log('Desde nuestra función generadora');
 }

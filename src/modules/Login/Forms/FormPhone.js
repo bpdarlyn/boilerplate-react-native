@@ -4,10 +4,112 @@ import {
   Text,
   View,
   TextInput,
-  TouchableOpacity 
+  TouchableOpacity, 
+  Button 
 } from 'react-native';
+import { Field, reduxForm } from 'redux-form';
 
-export default class FormPhone extends Component<{}> {
+const fieldNombre = (props) => {
+
+  return (
+    <View style={styles.texInput}>
+      <TextInput
+        placeholder={props.ph}
+        onChangeText={props.input.onChange}
+        value={props.input.value}
+        keyboardType={props.input.name === 'telefono' ? 'number-pad' : 'default'}
+        autoCapitalize="none"
+        secureTextEntry={!!(props.input.name === 'password' || props.input.name === 'confirmacion')}
+        onBlur={props.input.onBlur}
+      />
+      <View style={styles.linea} />
+      {props.meta.touched &&
+        props.meta.error && <Text style={styles.errors}>{props.meta.error}</Text>}
+    </View>
+  );
+};
+
+
+const validate = (values) => {
+  const errors = {};
+  if (!values.telefono) {
+    errors.telefono = 'requerido';
+  } else if (values.telefono.length < 5) {
+    errors.telefono = 'deben ser al menos 5 caracteres';
+  } else if (values.telefono.length > 16) {
+    errors.telefono = 'debe ser menor de 10 caracteres';
+  }
+/*
+  if (!values.correo) {
+    errors.correo = 'requerido';
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.correo)) {
+    errors.correo = 'correo invalido';
+  }
+
+  if (!values.password) {
+    errors.password = 'requerido';
+  } else if (values.password.length > 5) {
+    errors.password = 'deben ser al menos 5 caracteres';
+  } else if (values.password.length < 16) {
+    errors.password = 'debe ser menor de 15 caracteres';
+  }
+*/
+  if (!values.confirmacion) {
+    errors.confirmacion = 'requerido';
+  } else if (values.password !== values.confirmacion) {
+    errors.confirmacion = 'el password debe coincidir';
+  }
+
+  return errors;
+};
+
+const FormPhone = (props) => {
+  
+  return (
+    <View>
+      <Field name="telefono" component={fieldNombre} ph="75052653" />
+      <Button title="Registrar Teléfono" onPress={
+          props.handleSubmit(props.loginPhone)
+        } />
+
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  texInput: {
+    marginBottom: 16,
+  },
+  linea: {
+    backgroundColor: '#DCDCDC',
+    height: 2,
+  },
+  errors: {
+    color: '#FF0000',
+  },
+  button: {
+    width:300,
+    backgroundColor:'#1c313a',
+     borderRadius: 25,
+      marginVertical: 10,
+      paddingVertical: 13
+  },
+  buttonText: {
+    fontSize:16,
+    fontWeight:'500',
+    color:'#ffffff',
+    textAlign:'center'
+  }
+});
+
+
+export default reduxForm({
+  form: 'FormPhone',
+  validate,
+})(FormPhone);
+
+/*
+export default class FormPhone extends Component {
 
 	render(){
 		return(
@@ -68,3 +170,5 @@ const styles = StyleSheet.create({
     textAlign:'center'
   }
 });
+
+*/

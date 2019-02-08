@@ -3,6 +3,7 @@ import { reducer as form } from 'redux-form';
 import createSagaMiddleware from 'redux-saga';
 import CONSTANTS from '../constants/Constants';
 import funcionPrimaria from './Sagas/Sagas';
+import signOutUser from '../services/Firebase';
 
 
 const reducerPrueba = (state = [0], action) => {
@@ -19,6 +20,7 @@ const reducerPrueba = (state = [0], action) => {
       case CONSTANTS.ESTABLERCER_SESION:
         return action.usuario;
       case CONSTANTS.CERRAR_SESION:
+        signOutUser
         return null;
       default:
         return state;
