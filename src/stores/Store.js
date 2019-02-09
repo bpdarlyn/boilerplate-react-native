@@ -16,12 +16,17 @@ const reducerPrueba = (state = [0], action) => {
   };
   
   const reducerSesion = (state = null, action) => {
+    
     switch (action.type) {
       case CONSTANTS.ESTABLERCER_SESION:
         return action.usuario;
       case CONSTANTS.CERRAR_SESION:
         signOutUser
         return null;
+      case CONSTANTS.LOGIN_PHONE:
+      console.log("reducer LOGIN_PHONE");
+        console.log(state);
+        return 
       default:
         return state;
     }
