@@ -9,16 +9,29 @@ const RutasNoAutenticadas = StackNavigator(
   {
     Authentication: {
       screen: Authentication,
+      headerMode: 'none',
+      header: null,
+      navigationOptions: {
+          header: null
+      }
     },
     SignUp: {
       screen: SignUp,
     },
     SignUpPhone: {
       screen: SignUpPhone,
+      header: {
+        visible: true
+      },
+      headerTintColor: '#000000',
+      navigationOptions: {
+      }
     }
   },
   {
-    headerMode: 'none',
+    header: {
+      visible: false
+    }
   },
 );
 
