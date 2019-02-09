@@ -12,7 +12,6 @@ const MenuImage = ({navigation}) => {
     }
 }
 
-
 export const RutasAutenticadas = StackNavigator({
   DrawerMenu: {
     screen: DrawerMenu,

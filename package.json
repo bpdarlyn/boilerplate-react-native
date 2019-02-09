@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "postinstall": "./node_modules/react-native-maps/enable-google-maps REPLACE_ME_RELATIVE_PATH_TO_GOOGLE_MAPS_INSTALL",
     "test": "jest"
   },
   "dependencies": {
@@ -12,6 +13,7 @@
     "react-native-facebook-login": "1.6.1",
     "react-native-fbsdk": "^0.8.0",
     "react-native-firebase": "5.2.1",
+    "react-native-maps": "0.23.0",
     "react-native-router-flux": "^4.0.6",
     "react-redux": "6.0.0",
     "redux": "4.0.1",

@@ -13,6 +13,7 @@ class DrawerScreen extends Component {
   }
 
   render () {
+    const { navigation } = this.props;
     return (
       <View>
         <ScrollView>
@@ -23,7 +24,7 @@ class DrawerScreen extends Component {
               </Text>
             </View>
             <View style={styles.menuItem}>
-              <Text onPress={this.navigateToScreen('About')}>
+              <Text onPress={this.navigateToScreen('HomeMap')}>
                About
               </Text>
             </View>

@@ -71,6 +71,11 @@ PODS:
     - GoogleUtilities/Network (~> 5.2)
     - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
+  - GoogleMaps (3.0.2):
+    - GoogleMaps/Maps (= 3.0.2)
+  - GoogleMaps/Base (3.0.2)
+  - GoogleMaps/Maps (3.0.2):
+    - GoogleMaps/Base
   - GoogleUtilities/AppDelegateSwizzler (5.3.7):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -112,6 +117,8 @@ PODS:
     - React
   - react-native-fbsdk/Share (0.8.0):
     - FBSDKShareKit
+    - React
+  - react-native-maps (0.23.0):
     - React
   - React/Core (0.58.1):
     - yoga (= 0.58.1.React)
@@ -170,7 +177,9 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - GoogleMaps
   - react-native-fbsdk (from `../node_modules/react-native-fbsdk`)
+  - react-native-maps (from `../node_modules/react-native-maps`)
   - React/Core (from `../node_modules/react-native`)
   - React/CxxBridge (from `../node_modules/react-native`)
   - React/DevSupport (from `../node_modules/react-native`)
@@ -203,6 +212,7 @@ SPEC REPOS:
     - FirebaseInstanceID
     - FirebaseMessaging
     - GoogleAppMeasurement
+    - GoogleMaps
     - GoogleUtilities
     - GTMSessionFetcher
     - leveldb-library
@@ -220,6 +230,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native"
   react-native-fbsdk:
     :path: "../node_modules/react-native-fbsdk"
+  react-native-maps:
+    :path: "../node_modules/react-native-maps"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -242,6 +254,7 @@ SPEC CHECKSUMS:
   Folly: de497beb10f102453a1afa9edbf8cf8a251890de
   glog: aefd1eb5dda2ab95ba0938556f34b98e2da3a60d
   GoogleAppMeasurement: 98b71f5e04142793729a5ef23e5b96651ff4b70f
+  GoogleMaps: 941cd655e009b4d8e42df19a3d749bc3fccec973
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
@@ -249,8 +262,9 @@ SPEC CHECKSUMS:
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   React: 9b873b38b92ed8012d7cdf3b965477095ed364c4
   react-native-fbsdk: d5f98cc5abecbcc463e3c35c04743d716d002d37
+  react-native-maps: 066c2afcc89e18726377bcc685315f989ca22449
   yoga: 0885622311729a02c2bc02dca97167787a51488b
 
-PODFILE CHECKSUM: 9a999a464482fb243e665b932db38ff1debce0fa
+PODFILE CHECKSUM: 73238de3847eeaea56317984306e911063c7a568
 
 COCOAPODS: 1.5.3

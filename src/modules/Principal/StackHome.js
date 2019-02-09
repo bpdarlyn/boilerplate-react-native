@@ -1,11 +1,15 @@
 import { StackNavigator } from 'react-navigation';
-import Home from './Home';
+import Home from './Home';  
 import Profile from '../Profile/Profile';
+import HomeMap from './HomeMap';
+
 
 const StackHome = StackNavigator({
   Home: {
     screen: Home,
-
+  },
+  HomeMap: {
+    screen: HomeMap,
   },
   Profile: {
     screen: Profile,
@@ -17,9 +21,8 @@ const StackHome = StackNavigator({
   },
 },
 { 
-  initialRouteName: 'Home',
-  headerMode: 'none',
-
+  initialRouteName: 'HomeMap',
+  headerMode: 'none'
 }
 );
 
