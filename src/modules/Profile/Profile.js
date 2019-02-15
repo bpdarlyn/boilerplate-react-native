@@ -1,45 +1,25 @@
 // import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
-import firebase from 'react-native-firebase'
-import CONSTANTS from '../../constants/Constants';
+import { 
+  View, 
+  Text, 
+  StyleSheet, 
+  Button, 
+  TextInput 
+} from 'react-native';
 import { connect } from 'react-redux';
-import {
-  actionCerrarSesion
-} from '../../actions/Actions';
+import FormProfile from './Forms/FormProfile';
 // create a component
 class Profile extends Component {
-  signOutUser = async () => {
-    try {
-      await firebase.auth().signOut();
-    } catch (e) {
-        console.log(e);
-    }
-  }
-  cerrarSesionX = (values) => {
-    this.props.cerrarSesion(values);
-  };
   render() {
     const { navigation } = this.props;
     return (
       <View style={styles.container}>
-        <Text>Profile</Text>
+        <FormProfile />
         <Button
-          title="Autor"
+          title="Volver"
           onPress={() => {
-            navigation.navigate('Autor');
-          }}
-        />
-        <Button
-          title="Comentarios"
-          onPress={() => {
-            navigation.navigate('Comentarios');
-          }}
-        />
-        <Button
-          title="Logout"
-          onPress={() => {
-            this.signOutUser()//this.cerrarSesionX(this.props.usuario)
+            navigation.goBack();
           }}
         />
       </View>
@@ -52,22 +32,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#2c3e50',
+    paddingHorizontal: 16,
   },
 });
 
-// make this component available to the app
-//export default Profile;
-
 const mapStateToProps = state => ({
-  usuario: state.reducerSesion
+  numero: state.reducerPrueba,
 });
 
 const mapDispatchToProps = dispatch => ({
-    cerrarSesion: (values) => {
-        dispatch(actionCerrarSesion(values));
-    },
+  aumentar: () => {
+    dispatch({ type: 'AUMENTAR_REDUCER_PRUEBA' });
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

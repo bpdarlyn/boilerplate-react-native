@@ -24,6 +24,23 @@ function* sagaRegistro(values) {
     console.log(error);
   }
 }
+
+const saveData = (model_name, value) =>
+    baseDeDatos
+        .ref(`${model_name}/${value.id}`)
+        .set(value);
+
+function* sagaSaveData(name ,values){
+  try {
+    //const registro = yield call(registroEnFirebase, values.datos);
+    //const { email, uid } = registro;
+    //const { datos: { nombre } } = values;
+    // uid, email, nombre
+    yield call(saveData, name, values);
+  } catch (error) {
+    console.log(error);
+  }
+}
 // LOGIN FACEBOOK
 const loginEnFirebase = ({ correo, password }) =>
   autenticacion.signInWithEmailAndPassword(correo, password).then(success => success.toJSON());
@@ -54,6 +71,7 @@ export default function* funcionPrimaria() {
   yield takeEvery(CONSTANTS.REGISTRO, sagaRegistro);
   yield takeEvery(CONSTANTS.LOGIN, sagaLogin);
   yield takeEvery(CONSTANTS.LOGIN_PHONE, sagaLoginPhone);
+  yield takeEvery(CONSTANTS.FIREBASE_SET, sagaSaveData)
   // yield ES6
   console.log('Desde nuestra función generadora');
 }
