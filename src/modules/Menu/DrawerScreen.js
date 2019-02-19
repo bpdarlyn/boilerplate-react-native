@@ -25,12 +25,17 @@ class DrawerScreen extends Component {
             </View>
             <View style={styles.menuItem}>
               <Text onPress={this.navigateToScreen('HomeMap')}>
-               About
+               Mapa
               </Text>
             </View>
             <View style={styles.menuItem}>
               <Text onPress={this.navigateToScreen('Profile')}>
               Perfil
+              </Text>
+            </View>
+            <View style={styles.menuItem}>
+              <Text onPress={this.navigateToScreen('Travel')}>
+              Viajes
               </Text>
             </View>
           </View>
