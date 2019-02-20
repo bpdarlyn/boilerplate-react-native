@@ -1,6 +1,12 @@
 // import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button, FlatList } from 'react-native';
+import { View, 
+  Text, 
+  StyleSheet, 
+  Button, 
+  FlatList, 
+  TouchableHighlight,
+  TextInput } from 'react-native';
 import { connect } from 'react-redux';
 import MapView from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 import Row from './Render/Row';
@@ -8,42 +14,43 @@ import Row from './Render/Row';
 
 // create a component
 class HomeMap extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-          datas: data
-        };
-    }
+  constructor(props){
+      super(props);
+      this.state = {
+        datas: data,
+        showCancel: true
+      };
+  }
     
-    componentDidMount(){
-        this.captureCurrentPosition();
-    }
+  componentDidMount(){
+      //this.captureCurrentPosition();
+  }
     
-    captureCurrentPosition(){
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-              this.setState({
-                region: {
-                  latitude: position.coords.latitude,
-                  longitude: position.coords.longitude,
-                  latitudeDelta: 0.0922,
-                  longitudeDelta: 0.0421
-                },
-              });
-            },
-            (error) => this.setState({ error: error.message }),
-            { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
-        );
-    }
+  captureCurrentPosition(){
+      navigator.geolocation.getCurrentPosition(
+          (position) => {
+            this.setState({
+              region: {
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421
+              },
+            });
+          },
+          (error) => this.setState({ error: error.message }),
+          { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
+      );
+  }
     
-    state = {
-        region: {
-          latitude: 37.78825,
-          longitude: -122.4324,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421
-        }
-    };
+  stateLatLong = {
+      region: {
+        latitude: 37.78825,
+        longitude: -122.4324,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421
+      }
+  };
     
   onRegionChange = (region) => {
       this.setState({ region });
@@ -52,6 +59,37 @@ class HomeMap extends Component {
   space(){
     return(<View style={{height: 50, width: 2, backgroundColor: 'black'}}/>)
   };
+  toggleCancel = () => {
+    this.setState({
+        showCancel: !this.state.showCancel
+    });
+  };
+
+  _renderCancel = (props) =>  {
+    return (
+        <TouchableHighlight 
+          style = {styles.actionButtonCancel}
+          onPress={()=> this.toggleCancel()}>
+          <View>
+              <Text style={styles.buttonText} >Cancelar</Text>
+          </View>
+        </TouchableHighlight>
+    );
+  };
+  _renderMarcar = (props) =>  {
+    return (
+        <TouchableHighlight 
+          style = {styles.actionButton}
+          onPress={()=> this.toggleCancel()}>
+          <View>
+              <Text style={styles.buttonText} >Marcar</Text>
+          </View>
+        </TouchableHighlight>
+    );
+  };
+  shouldComponentUpdate() {
+    return false
+  }
 
   render() {
     const { navigation } = this.props;
@@ -64,6 +102,9 @@ class HomeMap extends Component {
             showsUserLocation={true}
           >
           </MapView>
+          {this.state.showCancel ? this._renderMarcar() : null} 
+
+          {this.state.showCancel ? this._renderCancel() : null} 
           <FlatList
             style={styles.containerok}
             data={this.state.datas}
@@ -88,12 +129,28 @@ const styles = StyleSheet.create({
       ...StyleSheet.absoluteFillObject,
     },
     actionButton: {
+      backgroundColor:'#1c313a',
+      borderRadius: 25,
+      marginVertical: 10,
+      paddingVertical: 13,
       position: 'absolute',
-      width: 20,
-      height: 20,
+      width: 202,
+      height: 50,
       top: 10,
-      left: 10,
-      zIndex: 10
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    actionButtonCancel: {
+      backgroundColor:'#cb2431',
+      borderRadius: 25,
+      marginVertical: 10,
+      bottom: 10,
+      paddingVertical: 13,
+      position: 'absolute',
+      width: 202,
+      height: 50,
+      flex: 1,
+      alignItems: 'center',
     },
     containerok: {
       position: 'absolute',
@@ -104,6 +161,12 @@ const styles = StyleSheet.create({
     separador: {
       borderWidth: 1,
       borderColor: '#C0C0C0',
+    },
+    buttonText: {
+      fontSize:16,
+      fontWeight:'500',
+      color:'#ffffff',
+      textAlign:'center'
     }
    });
 
