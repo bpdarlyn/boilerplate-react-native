@@ -44,6 +44,8 @@ target 'AtyClientRN' do
   # react-native-maps dependencies
   pod 'react-native-maps', path: rn_maps_path
   
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
 end
 # post_install do |installer|
 #   installer.pods_project.targets.each do |target|
