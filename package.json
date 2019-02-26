@@ -11,10 +11,10 @@
     "react": "16.6.3",
     "react-native": "0.58.1",
     "react-native-facebook-login": "1.6.1",
-    "react-native-fbsdk": "^0.8.0",
+    "react-native-fbsdk": "0.8.0",
     "react-native-firebase": "5.2.1",
     "react-native-maps": "0.23.0",
-    "react-native-router-flux": "^4.0.6",
+    "react-native-router-flux": "4.0.6",
     "react-redux": "6.0.0",
     "redux": "4.0.1",
     "redux-form": "8.1.0",
@@ -29,5 +29,8 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "engines": {
+    "node": "10.15.0"
   }
 }
