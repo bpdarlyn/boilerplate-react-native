@@ -2,13 +2,14 @@ import React from "react";
 import {View,ActivityIndicator} from 'react-native';
 import styles from './styles';
 import PropTypes from "prop-types";
+import LinearGradient from 'react-native-linear-gradient';
 
 const ProgressBar = (props) => {
   const {loading,content} = props;
   return (
-      loading ? <View style={styles.centerActivity}>
-        <ActivityIndicator size={"large"} color={"#00ff00"}/>
-      </View> : content
+    loading ? <LinearGradient colors={['#9EBE00','#0099DB']} style={styles.centerActivity}>
+        <ActivityIndicator size={"large"} color={"#9EBE00"}/>
+      </LinearGradient> : content
   );
 };
 ProgressBar.propTypes = {

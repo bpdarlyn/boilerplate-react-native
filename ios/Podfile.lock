@@ -6,6 +6,8 @@ PODS:
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
   - boost-for-react-native (1.63.0)
+  - BVLinearGradient (2.5.3):
+    - React
   - DoubleConversion (1.1.6)
   - FBSDKCoreKit (4.40.0):
     - Bolts (~> 1.9)
@@ -172,6 +174,7 @@ PODS:
   - yoga (0.58.1.React)
 
 DEPENDENCIES:
+  - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Firebase/Auth (= 5.15.0)
   - Firebase/Core (= 5.15.0)
@@ -223,6 +226,8 @@ SPEC REPOS:
     - Protobuf
 
 EXTERNAL SOURCES:
+  BVLinearGradient:
+    :path: "../node_modules/react-native-linear-gradient"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   Folly:
@@ -243,6 +248,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
+  BVLinearGradient: 0d985ec461359c82bc254f26d11008bdae50d17a
   DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
   FBSDKCoreKit: ae214474b25033399c131dc81d258e412582a2ba
   FBSDKLoginKit: 7a1e411d46acc8834588eca437daf34de42e1d52
@@ -271,6 +277,6 @@ SPEC CHECKSUMS:
   RNGestureHandler: 0438a761e8f29be3b809f9e7e43014f3aba4d7a6
   yoga: 9a1af3dc4d33846b5adf4ce3a331f08e5bd23ca6
 
-PODFILE CHECKSUM: b23c472dbffd63be4c8ca6635232371d856520e8
+PODFILE CHECKSUM: 1e27697ae7e2479cd6b6130f30cfc1570167bea2
 
 COCOAPODS: 1.6.1

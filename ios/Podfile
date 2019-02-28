@@ -45,6 +45,7 @@ target 'AtyClientRN' do
   pod 'react-native-maps', path: rn_maps_path
   
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
 
 end
 # post_install do |installer|
