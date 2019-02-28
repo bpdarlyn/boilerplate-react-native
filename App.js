@@ -3,6 +3,7 @@ import {Provider} from 'react-redux';
 import Screen from './src/Screen';
 import {store,persistor} from './src/stores/configureStore';
 import {PersistGate} from "redux-persist/lib/integration/react";
+import ProgressBar from "./src/components/ProgressBar/ProgressBar";
 
 class App extends React.Component {
     constructor(props) {
@@ -12,7 +13,7 @@ class App extends React.Component {
     render() {
         return (
             <Provider store={store}>
-                <PersistGate loading={null} persistor={persistor}>
+                <PersistGate loading={<ProgressBar loading={true}/>} persistor={persistor}>
                     <Screen/>
                 </PersistGate>
             </Provider>

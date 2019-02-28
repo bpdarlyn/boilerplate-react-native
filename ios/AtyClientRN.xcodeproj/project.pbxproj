@@ -1169,7 +1169,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AtyClientRN/Pods-AtyClientRN-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-AtyClientRN/Pods-AtyClientRN-resources.sh",
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 			);
@@ -1182,7 +1182,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtyClientRN/Pods-AtyClientRN-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AtyClientRN/Pods-AtyClientRN-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C8B65F7B5FA120C3DB914755 /* [CP] Check Pods Manifest.lock */ = {

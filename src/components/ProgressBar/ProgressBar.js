@@ -13,7 +13,7 @@ const ProgressBar = (props) => {
 };
 ProgressBar.propTypes = {
     loading: PropTypes.bool.isRequired,
-    content: PropTypes.object.string
+    content: PropTypes.object
 };
 
 export default ProgressBar;
