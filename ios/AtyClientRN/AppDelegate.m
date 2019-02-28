@@ -12,6 +12,7 @@
 #import <Firebase.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import "RNSplashScreen.h"
 
 @implementation AppDelegate
 
@@ -36,6 +37,9 @@
   [self.window makeKeyAndVisible];
   [[FBSDKApplicationDelegate sharedInstance] application:application
                            didFinishLaunchingWithOptions:launchOptions];
+  
+  // Splash Screen
+  [RNSplashScreen show];  // here
   return YES;
 }
 

@@ -39,6 +39,8 @@
 		6052714732614B0C9F27D5A7 /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DEDBCA6B924C6E9A981C9B /* libRNFirebase.a */; };
 		711CC93F220E562400D614C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 711CC93E220E562400D614C6 /* GoogleService-Info.plist */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		859CABB0222894F400EDE54C /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 859CABAF222894D100EDE54C /* libSplashScreen.a */; };
+		859CABB622289E7400EDE54C /* aty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 859CABB522289E7400EDE54C /* aty.jpg */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
@@ -317,6 +319,13 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		859CABAE222894D100EDE54C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 859CAB84222894D100EDE54C /* SplashScreen.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D7682761D8E76B80014119E;
+			remoteInfo = SplashScreen;
+		};
 		ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */;
@@ -355,6 +364,8 @@
 		711CC93E220E562400D614C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "AtyClientRN/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		859CAB84222894D100EDE54C /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SplashScreen.xcodeproj; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; };
+		859CABB522289E7400EDE54C /* aty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = aty.jpg; path = "../../../Downloads/Telegram Desktop/aty.jpg"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		D2DEDBCA6B924C6E9A981C9B /* libRNFirebase.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFirebase.a; sourceTree = "<group>"; };
 		E7AA5282310AB93FE103191C /* libPods-AtyClientRN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AtyClientRN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -374,6 +385,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				859CABB0222894F400EDE54C /* libSplashScreen.a in Frameworks */,
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
@@ -504,6 +516,7 @@
 				711CC93E220E562400D614C6 /* GoogleService-Info.plist */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				859CABB522289E7400EDE54C /* aty.jpg */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
@@ -590,6 +603,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				859CAB84222894D100EDE54C /* SplashScreen.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -639,6 +653,14 @@
 				00E356EE1AD99517003FC87E /* AtyClientRNTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* AtyClientRN-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* AtyClientRN-tvOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		859CAB85222894D100EDE54C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				859CABAF222894D100EDE54C /* libSplashScreen.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -816,6 +838,10 @@
 				{
 					ProductGroup = 711CC8FB220D541400D614C6 /* Products */;
 					ProjectRef = 5584BF4F847345C9AB8A3C19 /* RNFirebase.xcodeproj */;
+				},
+				{
+					ProductGroup = 859CAB85222894D100EDE54C /* Products */;
+					ProjectRef = 859CAB84222894D100EDE54C /* SplashScreen.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1088,6 +1114,13 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		859CABAF222894D100EDE54C /* libSplashScreen.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSplashScreen.a;
+			remoteRef = 859CABAE222894D100EDE54C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1109,6 +1142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				859CABB622289E7400EDE54C /* aty.jpg in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				711CC93F220E562400D614C6 /* GoogleService-Info.plist in Resources */,
@@ -1344,6 +1378,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 				);
 				INFOPLIST_FILE = AtyClientRN/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1375,6 +1410,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 				);
 				INFOPLIST_FILE = AtyClientRN/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
