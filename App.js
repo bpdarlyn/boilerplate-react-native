@@ -1,25 +1,24 @@
-import React, { Component } from 'react';
-import {
-    Text
-} from 'react-native';
+import React from 'react';
+import {Provider} from 'react-redux';
+import Screen from './src/Screen';
+import {store,persistor} from './src/stores/configureStore';
+import {PersistGate} from "redux-persist/lib/integration/react";
 
-import { Provider } from 'react-redux';
-import Store from './src/stores/Store';
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
-import Seleccion from './src/Seleccion';
+    render() {
+        return (
+            <Provider store={store}>
+                <PersistGate loading={null} persistor={persistor}>
+                    <Screen/>
+                </PersistGate>
+            </Provider>
 
-export default class App extends Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    return (
-        <Provider store={Store}>
-          <Text>
-            Holasdf asdasd
-          </Text>
-        </Provider>
-    );
-  }
+        )
+    }
 }
+
+export default App;
