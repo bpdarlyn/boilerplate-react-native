@@ -1,6 +1,7 @@
 package com.atyclientrn;
 
 import android.app.Application;
+import android.graphics.LinearGradient;
 
 import com.facebook.react.ReactApplication;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
@@ -11,6 +12,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
+import com.BV.LinearGradient.LinearGradientPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,7 +30,8 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
             new RNGestureHandlerPackage(),
-              new SplashScreenReactPackage()
+            new SplashScreenReactPackage(),
+            new LinearGradientPackage()
             //new RNFirebasePackage(),
             //new FBSDKPackage()
       );
