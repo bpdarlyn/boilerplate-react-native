@@ -12,12 +12,11 @@ target 'AtyClientRN' do
   pod 'Firebase/Messaging', '5.15.0'
   pod 'Firebase/Database', '5.15.0'
   pod 'GoogleMaps', '3.0.2'
-# facebook
+# Facebook
   pod 'react-native-fbsdk', :path => '../node_modules/react-native-fbsdk'
 
   rn_path = '../node_modules/react-native'
   rn_maps_path = '../node_modules/react-native-maps'
-
   pod 'React', :path => '../node_modules/react-native', :subspecs => [
   'Core',
   'CxxBridge',
@@ -31,11 +30,11 @@ target 'AtyClientRN' do
   'RCTSettings',
   'RCTText',
   'RCTVibration',
-  'RCTWebSocket',
+  'RCTWebSocket'
   ]
   # Explicitly include Yoga if you are using RN >= 0.42.0
   pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
-  
+
   # Third party deps podspec link
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
@@ -47,6 +46,7 @@ target 'AtyClientRN' do
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
 end
+
 # post_install do |installer|
 #   installer.pods_project.targets.each do |target|
 #     if target.name == 'react-native-google-maps'

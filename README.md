@@ -15,7 +15,7 @@ Git
 ## Run
 
 ```bash
-git clone git@github.com:QubyteSoft/aty-client-react-native.git && cd aty-client-react-native
+git clone git@github.com:bpdarlyn@boilerplate-react-native && cd boilerplate-react-native
 yarn install
 react-native run-ios
 ```
